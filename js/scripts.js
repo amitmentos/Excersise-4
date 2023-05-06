@@ -1,17 +1,42 @@
 var playFleg = 1;
 $(document).ready(function() {
-    var video = $('#myVideo');
+    var video1 = $('#myVideo');
+    var video2 = $('#myVideo2');
     var form = $('#form-container');
-    
-    // form.hide();
-    video.hide();
+    var sos =$('.sos-button');
+    var minAge = 23;
+    var maxAge = 38;
+    var select = $(".age-select");
+    var audio = new Audio('alert.mp3');
+    var flegStart = 0;
+    var flagvideo2 =0;
 
+    sos.hide();
+    form.hide();
+    video1.hide();
+    video2.hide();
+
+
+    for (var i = minAge; i <= maxAge; i++) {
+        select.append($('<option></option>').val(i).html(i));
+    }
+
+    $('#hide-alert-btn, .video-container').click(function() {
+        $('.alert').hide();
+        sos.show()
+        audio.play();
+        flegStart++;
+    });
+    
     $('.sos-button, .video-container').click(function() {
-        $('.sos-button').hide();
-        video.show();
-        if(playFleg){
-            video[0].play();
-            playFleg=0;
+        if(flegStart==2){
+            $('.sos-button').hide();
+            video1.show();
+            audio.pause();
+            if(playFleg){
+                video1[0].play();
+                playFleg=0;
+            }
         }
     });
 
@@ -52,6 +77,32 @@ $(document).ready(function() {
             } else {
                 $('.not-9-digits').hide();
             }
+        }
+    });
+
+    $('.age-select').click(function() {
+        if(!flagvideo2){
+            video2.show();
+            video2[0].play();
+            form.hide();
+            flagvideo2=1;
+        }
+    });
+
+
+    video2.on('ended', function() {
+        video2.hide();
+        form.show()
+    });
+
+    $('form').on('submit', function(event) {
+        var checkedCount = $('input[type="checkbox"]:checked').length;
+        if (checkedCount < 3) {
+            $(".3-hobbies").show();
+            event.preventDefault();
+        }
+        else{
+            $(".3-hobbies").hide();
         }
     });
 

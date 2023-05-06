@@ -8,11 +8,11 @@
 
 #main{
     width: 1440px;
-    height: 1024px;
+    height: 1000px;
 }
 
 body  {
-background-image: url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701885793.jpg');
+background: url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701885793.jpg');
   background-size:cover;
         -webkit-animation: slidein 100s;
         animation: slidein 100s;
@@ -38,6 +38,22 @@ to {background-position: -100px 0px;background-size:2750px;}
 
 }
 
+.alert{ 
+    width: 500px;
+    height: 200px;
+    text-align: center;
+    padding: auto;
+    left: 650px;
+    top: 400px;
+    background-color: red;
+    color: yellow;
+}
+
+#hide-alert-btn{
+    background-color: black;
+    color: yellow;
+    border-color: black;
+}
 
 .sos-button {
     position: fixed;
@@ -85,7 +101,7 @@ to {background-position: -100px 0px;background-size:2750px;}
   
   .video-container {
     position: absolute;
-    top: 120px;
+    top: 90px;
     left: 700px;
     width: 550px;
     height: 800px;
@@ -100,20 +116,20 @@ to {background-position: -100px 0px;background-size:2750px;}
 
 form {
     background: transparent;
-    width: 345px;
+    width: 435px;
     position: absolute;
     top: 100px;
-    left: 110px;
+    left: 70px;
 }
 
-form h1{
+/* form h1{
     width: 380px;
-    margin-left: 0;
-}
+    left: 0 !important;
+} */
 
 form p {
     color: white;
-    margin-left: 30px;
+    margin-left: 0px;
     
 }
 
@@ -122,7 +138,7 @@ form p {
     position: relative;
     width: 550px;
     height: 900px;
-    left: 50%;
+    left: 47%;
     padding: 100px;
     top: 50px;
     box-shadow: 0px 50px 30px -30px rgba(67, 67, 67, 0.29);
@@ -138,7 +154,8 @@ form p {
 #form-container h1{
     position: absolute;
     top: 30px;
-    left: 110px;
+    left: 100px;
+    color: rgb(229, 218, 6);
 }
 
 #numberInp{
@@ -146,8 +163,29 @@ form p {
 }
 
 .checkB{
-    margin-right: 200px;
+    margin-right: 50px;
 }
+
+#checkB1{
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+#checkB3{
+    margin-right: 10px;
+}
+
+input[type=radio]{
+    margin-right: 20px;
+}
+
+input[name=submit]{
+    position: relative;
+    width: 130px;
+    left: 150px;
+    background-color: yellow;
+}
+
 
 form span{
     display: none;

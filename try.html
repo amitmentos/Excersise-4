@@ -16,11 +16,19 @@
 <body>
     <div id="main">
         <div class="center"></div>
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">You are in a big danger!! </h4>
+            <p>Are you sure you are ready to fight for your life?</p>
+            <hr>
+            <p class="mb-0"><button type="button" class="btn btn-primary" id="hide-alert-btn">Yes, I'm ready!</button></p>
+        </div>
         <div class="sos-button"><span class="sos-text">S.O.S</span></div>
         <div class="video-container">
             <video id="myVideo" autoplay playsinline width="640" height="360" controlsList="nodownload">
                 <source src="bibi1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+            </video>
+            <video id="myVideo2" autoplay playsinline width="640" height="360" controlsList="nodownload">
+                <source src="bibi2.mp4" type="video/mp4">
             </video>
         </div>
         <div id="form-container">
@@ -31,17 +39,17 @@
                 Email:<input type="email" class="form-control" name="mail" placeholder="Email"><br>
                 Facebook:<input type="url" class="form-control" name="website" value="" placeholder="URL"><br>
                 TEL:<input type="tel" class="form-control" name="phone" value="" placeholder="+972"><span class="only-number">*Only Numbers</span><span class="not-9-digits">*9 Gigits Required</span><br><br>
-                Num of cofee: <input id="numberInp" type="number"  name="coffe" value="" >
-                Temp<input type="range" name="temper" value="" ><br><br>
-                Email:<textarea class="form-control" name="address" value=""></textarea><br>
-                1<input class="checkB" type="checkbox" name="interests[]"> Male:<input  type="radio"  name="gender" value="Male"><br>
-                2<input class="checkB" type="checkbox" name="interests[]" > Female:<input type="radio"  name="gender" value="Female"><br>
-                3<input class="checkB" type="checkbox" name="interests[]" ><br>
-                4<input class="checkB" type="checkbox" name="interests[]" >                AGE:<select name="age"><option value="24">24</option></select><br><br><br><br>
-                
-                
-
-                <input type="submit" name="mail" value="Submit"><br>
+                How much you want to live? <input type="range" name="temper" value="" ><br><br>
+                Adress:<textarea class="form-control" name="address" value=""></textarea><br>
+                <section>Hobbies:</section>
+                Chess <input class="checkB" id="checkB1" type="checkbox" name="interests[]" value="Chess">Sport <input class="checkB" type="checkbox" name="interests[]" value="Sport" >
+                Male:<input  type="radio"  name="gender" value="Male"> Female:<input type="radio"  name="gender" value="Female">
+                AGE:<select name="age" class="age-select" aria-valuemax="34" aria-valuemin="24" required>
+                    <option value="" disabled selected></option>
+                </select><br>
+                Code <input class="checkB" id="checkB3" type="checkbox" name="interests[]" value="Code"> Sleep<input class="checkB" type="checkbox" name="interests[]" > Coffee per day: <input id="numberInp" type="number"  name="coffe" value="" ><br>
+                <span class="3-hobbies">*At list 3 hobbies</span><br><br>
+                <input type="submit" class="form-control" name="submit" value="Submit"><br>
             </form>
         </div>
     </div>
