@@ -21,6 +21,40 @@ $(document).ready(function() {
         $('#myVideo').hide();
         form.show();
         });
+
+    
+    $('input[name="fullName"]').on('input', function() {
+        var value = $(this).val();
+        var regex1 = /^(?=.*[0-9])/;
+        var regex2 = /^(?=.*\s)/;
+        if (regex1.test(value)) {
+            $('.number-is-invalid').show();
+        } else {
+            $('.number-is-invalid').hide();
+        }
+        if (!regex2.test(value)) {
+            console.log("adsf")
+            $('.no-spaces').show();
+        } else {
+            $('.no-spaces').hide();
+        }
+    });
+
+    $('input[name="phone"]').on('input', function() {
+        var value = $(this).val();
+        var regex1 = /^[0-9]+$/;
+        if (!regex1.test(value)) {
+            $('.only-number').show();
+        } else {
+            $('.only-number').hide();
+            if (value.length !== 9) {
+                $('.not-9-digits').show();
+            } else {
+                $('.not-9-digits').hide();
+            }
+        }
+    });
+
     
 });
 

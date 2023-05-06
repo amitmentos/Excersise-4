@@ -26,11 +26,11 @@
         <div id="form-container">
             <h1>Save Your Life Form</h1>
             <form action="http://se.shenkar.ac.il/teach/web1/get_form3.php" method="get">
-                Full Name:<input type="text" class="form-control" name="fullName" placeholder="Full Name"> <br>
-                Password:<input type="password" class="form-control" name="pass" placeholder="Password"><br>
-                Email:<input type="email" class="form-control" name="mail"><br>
-                Facebook:<input type="url" class="form-control" name="website" value="" ><br>
-                TEL:<input type="tel" class="form-control" name="phone" value="" ><br>
+                Full Name:<input type="text" class="form-control" name="fullName" placeholder="Full Name"><span class="number-is-invalid">*remove numbers</span><span class="no-spaces">*add at list one space</span> <br>
+                Password:<input  pattern="^(?=.*[A-Z]).+$" type="password" title="At least on upper case letter" class="form-control" name="pass" placeholder="Password"><br>
+                Email:<input type="email" class="form-control" name="mail" placeholder="Email"><br>
+                Facebook:<input type="url" class="form-control" name="website" value="" placeholder="URL"><br>
+                TEL:<input type="tel" class="form-control" name="phone" value="" placeholder="+972"><span class="only-number">*Only Numbers</span><span class="not-9-digits">*9 Gigits Required</span><br><br>
                 Num of cofee: <input id="numberInp" type="number"  name="coffe" value="" >
                 Temp<input type="range" name="temper" value="" ><br><br>
                 Email:<textarea class="form-control" name="address" value=""></textarea><br>
