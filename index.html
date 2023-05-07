@@ -9,9 +9,10 @@
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-    crossorigin="anonymous"></script>    <link href="try1.css" rel="stylesheet"> 
+    crossorigin="anonymous"></script>    
+    <link href="css/style.css" rel="stylesheet"> 
     <script defer="" src="js/scripts.js"></script>  
-    <title>Document</title>
+    <title>Amit Form</title>
 </head>
 <body>
     <div id="main">
@@ -24,11 +25,11 @@
         </div>
         <div class="sos-button"><span class="sos-text">S.O.S</span></div>
         <div class="video-container">
-            <video id="myVideo" autoplay playsinline width="640" height="360" controlsList="nodownload">
-                <source src="bibi1.mp4" type="video/mp4">
+            <video id="myVideo" autoplay playsinline width="640" height="360" >
+                <source src="media/bibi1.mp4" type="video/mp4">
             </video>
-            <video id="myVideo2" autoplay playsinline width="640" height="360" controlsList="nodownload">
-                <source src="bibi2.mp4" type="video/mp4">
+            <video id="myVideo2" autoplay playsinline width="640" height="360" >
+                <source src="media/bibi2.mp4" type="video/mp4">
             </video>
         </div>
         <div id="form-container">
@@ -37,17 +38,17 @@
                 Full Name:<input type="text" class="form-control" name="fullName" placeholder="Full Name"><span class="number-is-invalid">*remove numbers</span><span class="no-spaces">*add at list one space</span> <br>
                 Password:<input  pattern="^(?=.*[A-Z]).+$" type="password" title="At least on upper case letter" class="form-control" name="pass" placeholder="Password"><br>
                 Email:<input type="email" class="form-control" name="mail" placeholder="Email"><br>
-                Facebook:<input type="url" class="form-control" name="website" value="" placeholder="URL"><br>
+                LinkdIn:<input type="url" class="form-control" name="website" value="" placeholder="URL"><br>
                 TEL:<input type="tel" class="form-control" name="phone" value="" placeholder="+972"><span class="only-number">*Only Numbers</span><span class="not-9-digits">*9 Gigits Required</span><br><br>
-                How much you want to live? <input type="range" name="temper" value="" ><br><br>
-                Adress:<textarea class="form-control" name="address" value=""></textarea><br>
+                How much you want to live? <input type="range" name="temper"><br><br>
+                Why we need to let you live?:<textarea class="form-control" name="address" ></textarea><br>
                 <section>Hobbies:</section>
                 Chess <input class="checkB" id="checkB1" type="checkbox" name="interests[]" value="Chess">Sport <input class="checkB" type="checkbox" name="interests[]" value="Sport" >
                 Male:<input  type="radio"  name="gender" value="Male"> Female:<input type="radio"  name="gender" value="Female">
-                AGE:<select name="age" class="age-select" aria-valuemax="34" aria-valuemin="24" required>
+                AGE:<select name="age" class="age-select" required>
                     <option value="" disabled selected></option>
                 </select><br>
-                Code <input class="checkB" id="checkB3" type="checkbox" name="interests[]" value="Code"> Sleep<input class="checkB" type="checkbox" name="interests[]" > Coffee per day: <input id="numberInp" type="number"  name="coffe" value="" ><br>
+                Code <input class="checkB" id="checkB3" type="checkbox" name="interests[]" value="Code"> Sleep<input class="checkB" type="checkbox" name="interests[]" value="Sleep"> Childrens: <input id="numberInp" type="number" name="coffee" ><br>
                 <span class="3-hobbies">*At list 3 hobbies</span><br><br>
                 <input type="submit" class="form-control" name="submit" value="Submit"><br>
             </form>

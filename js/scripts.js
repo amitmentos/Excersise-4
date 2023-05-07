@@ -7,9 +7,10 @@ $(document).ready(function() {
     var minAge = 23;
     var maxAge = 38;
     var select = $(".age-select");
-    var audio = new Audio('alert.mp3');
+    var audio = new Audio('media/alert.mp3');
     var flegStart = 0;
     var flagvideo2 =0;
+    var flagOK =1
 
     sos.hide();
     form.hide();
@@ -18,14 +19,16 @@ $(document).ready(function() {
 
 
     for (var i = minAge; i <= maxAge; i++) {
-        select.append($('<option></option>').val(i).html(i));
+        select.append($('<option></option>').val(i).html(i).attr('label', i));
     }
 
     $('#hide-alert-btn, .video-container').click(function() {
+        if(flegStart<=1){
         $('.alert').hide();
         sos.show()
         audio.play();
         flegStart++;
+        }
     });
     
     $('.sos-button, .video-container').click(function() {
@@ -54,14 +57,18 @@ $(document).ready(function() {
         var regex2 = /^(?=.*\s)/;
         if (regex1.test(value)) {
             $('.number-is-invalid').show();
+            flagOK =0;
         } else {
             $('.number-is-invalid').hide();
+            flagOK=1;
         }
         if (!regex2.test(value)) {
             console.log("adsf")
             $('.no-spaces').show();
+            flagOK=0;
         } else {
             $('.no-spaces').hide();
+            flagOK=1
         }
     });
 
@@ -70,12 +77,15 @@ $(document).ready(function() {
         var regex1 = /^[0-9]+$/;
         if (!regex1.test(value)) {
             $('.only-number').show();
+            flagOK=0;
         } else {
             $('.only-number').hide();
             if (value.length !== 9) {
                 $('.not-9-digits').show();
+                flagOK=0;
             } else {
                 $('.not-9-digits').hide();
+                flagOK=1;
             }
         }
     });
@@ -97,9 +107,14 @@ $(document).ready(function() {
 
     $('form').on('submit', function(event) {
         var checkedCount = $('input[type="checkbox"]:checked').length;
-        if (checkedCount < 3) {
+        if (checkedCount < 3 || flagOK == 0) {
+            if(checkedCount < 3 ){
             $(".3-hobbies").show();
             event.preventDefault();
+            }
+            else{
+                event.preventDefault();
+            }
         }
         else{
             $(".3-hobbies").hide();
