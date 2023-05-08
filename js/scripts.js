@@ -16,6 +16,8 @@ $(document).ready(function() {
     form.hide();
     video1.hide();
     video2.hide();
+    video1[0].pause();
+    video2[0].pause();
 
 
     for (var i = minAge; i <= maxAge; i++) {

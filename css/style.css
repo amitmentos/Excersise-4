@@ -194,6 +194,10 @@ input[name=submit]{
     background-color: yellow;
 }
 
+input[name=submit]:hover{
+  background-color: rgb(173, 173, 3);
+}
+
 
 form span{
     display: none;
